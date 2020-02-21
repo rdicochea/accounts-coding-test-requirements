@@ -15,12 +15,14 @@ namespace accounts_coding_test.Models
         public string LastName { get; set; }
         public string Email { get; set; }
         [DisplayName("Phone Number")]
-        public string PhoneNumber { get; set; }
+        [DisplayFormat(DataFormatString = "{0:(###)-###-####}")]
+        public ulong PhoneNumber { get; set; }
         [DisplayName("Amount Due")]
         [DisplayFormat(DataFormatString = "{0:C}")]
         public double AmountDue { get; set; }
         [DisplayName("Due Date")]
-        public string PaymentDueDate { get; set; }
+        [DisplayFormat(DataFormatString = "{0:d}")]
+        public DateTime? PaymentDueDate { get; set; }
         public int AccountStatusId { get; set; }
     }
 }

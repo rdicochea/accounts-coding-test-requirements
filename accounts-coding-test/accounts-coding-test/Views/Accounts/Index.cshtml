@@ -27,7 +27,10 @@
                             <li><label>@Html.DisplayNameFor(model => model.Email):</label> @Html.DisplayFor(modelItem => acct.Email)</li>
                             <li><label>@Html.DisplayNameFor(model => model.PhoneNumber):</label> @Html.DisplayFor(modelItem => acct.PhoneNumber)</li>
                             <li><label>@Html.DisplayNameFor(model => model.AmountDue):</label> @Html.DisplayFor(modelItem => acct.AmountDue)</li>
-                            <li><label>@Html.DisplayNameFor(model => model.PaymentDueDate):</label> @Html.DisplayFor(modelItem => acct.PaymentDueDate)</li>
+                            @if (acct.PaymentDueDate != null)
+                            {
+                                <li><label>@Html.DisplayNameFor(model => model.PaymentDueDate):</label> @Html.DisplayFor(modelItem => acct.PaymentDueDate)</li>
+                            }
                         </ul>
                     }
                 </div>
@@ -44,7 +47,10 @@
                             <li><label>@Html.DisplayNameFor(model => model.Email):</label> @Html.DisplayFor(modelItem => acct.Email)</li>
                             <li><label>@Html.DisplayNameFor(model => model.PhoneNumber):</label> @Html.DisplayFor(modelItem => acct.PhoneNumber)</li>
                             <li><label>@Html.DisplayNameFor(model => model.AmountDue):</label> @Html.DisplayFor(modelItem => acct.AmountDue)</li>
-                            <li><label>@Html.DisplayNameFor(model => model.PaymentDueDate):</label> @Html.DisplayFor(modelItem => acct.PaymentDueDate)</li>
+                            @if (acct.PaymentDueDate != null)
+                            {
+                                <li><label>@Html.DisplayNameFor(model => model.PaymentDueDate):</label> @Html.DisplayFor(modelItem => acct.PaymentDueDate)</li>
+                            }
                         </ul>
                     }
                 </div>
@@ -61,7 +67,10 @@
                             <li><label>@Html.DisplayNameFor(model => model.Email):</label> @Html.DisplayFor(modelItem => acct.Email)</li>
                             <li><label>@Html.DisplayNameFor(model => model.PhoneNumber):</label> @Html.DisplayFor(modelItem => acct.PhoneNumber)</li>
                             <li><label>@Html.DisplayNameFor(model => model.AmountDue):</label> @Html.DisplayFor(modelItem => acct.AmountDue)</li>
-                            <li><label>@Html.DisplayNameFor(model => model.PaymentDueDate):</label> @Html.DisplayFor(modelItem => acct.PaymentDueDate)</li>
+                            @if (acct.PaymentDueDate != null)
+                            {
+                                <li><label>@Html.DisplayNameFor(model => model.PaymentDueDate):</label> @Html.DisplayFor(modelItem => acct.PaymentDueDate)</li>
+                            }
                         </ul>
                     }
                     </div>
