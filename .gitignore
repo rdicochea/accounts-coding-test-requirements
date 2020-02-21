@@ -1,3 +1,4 @@
 accounts-coding-test/.vs/
 accounts-coding-test/accounts-coding-test/bin/
 accounts-coding-test/accounts-coding-test/obj/
+*.user

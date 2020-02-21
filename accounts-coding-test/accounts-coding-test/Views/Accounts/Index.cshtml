@@ -1,0 +1,77 @@
+﻿@model IEnumerable<accounts_coding_test.Models.AccountsViewModel>
+@{
+    ViewData["Title"] = "Accounts";
+}
+<h1>@ViewData["Title"]</h1>
+
+<section class="grid">
+    <header class="grid">
+        <div class="title-container">
+            <h1>Coding Test</h1>
+        </div>
+    </header>
+    <main class="content grid" id="home-content">
+        <div class="content-title-container">
+            <h2>Accounts</h2>
+        </div>
+        <section class="grid" id="account-grid">
+            <section class="account-column grid" id="active-account-column">
+                <div class="account-container-title" id="active-account-container-title">
+                    <h3>Active</h3>
+                </div>
+                <div class="account-container active-account">
+                    @foreach (var acct in Model.Where(s => s.AccountStatusId == (int)accounts_coding_test.Enums.AccountStatuses.Active))
+                    {
+                        <ul class="account-data-list">
+                            <li><label>@Html.DisplayNameFor(model => model.FirstName):</label> @Html.DisplayFor(modelItem => acct.LastName), @Html.DisplayFor(modelItem => acct.FirstName)</li>
+                            <li><label>@Html.DisplayNameFor(model => model.Email):</label> @Html.DisplayFor(modelItem => acct.Email)</li>
+                            <li><label>@Html.DisplayNameFor(model => model.PhoneNumber):</label> @Html.DisplayFor(modelItem => acct.PhoneNumber)</li>
+                            <li><label>@Html.DisplayNameFor(model => model.AmountDue):</label> @Html.DisplayFor(modelItem => acct.AmountDue)</li>
+                            <li><label>@Html.DisplayNameFor(model => model.PaymentDueDate):</label> @Html.DisplayFor(modelItem => acct.PaymentDueDate)</li>
+                        </ul>
+                    }
+                </div>
+            </section>
+            <section class="account-column grid" id="overdue-account-column">
+                <div class="account-container-title" id="overdue-account-container-title">
+                    <h3>Overdue</h3>
+                </div>
+                <div class="account-container overdue-account">
+                    @foreach (var acct in Model.Where(s => s.AccountStatusId == (int)accounts_coding_test.Enums.AccountStatuses.Overdue))
+                    {
+                        <ul class="account-data-list">
+                            <li><label>@Html.DisplayNameFor(model => model.FirstName):</label> @Html.DisplayFor(modelItem => acct.LastName), @Html.DisplayFor(modelItem => acct.FirstName)</li>
+                            <li><label>@Html.DisplayNameFor(model => model.Email):</label> @Html.DisplayFor(modelItem => acct.Email)</li>
+                            <li><label>@Html.DisplayNameFor(model => model.PhoneNumber):</label> @Html.DisplayFor(modelItem => acct.PhoneNumber)</li>
+                            <li><label>@Html.DisplayNameFor(model => model.AmountDue):</label> @Html.DisplayFor(modelItem => acct.AmountDue)</li>
+                            <li><label>@Html.DisplayNameFor(model => model.PaymentDueDate):</label> @Html.DisplayFor(modelItem => acct.PaymentDueDate)</li>
+                        </ul>
+                    }
+                </div>
+            </section>
+            <div class="account-column grid" id="inactive-account-column">
+                <div class="account-container-title" id="inactive-account-container-title">
+                    <h3>Inactive</h3>
+                </div>
+                <div class="account-container inactive-account">
+                    @foreach (var acct in Model.Where(s => s.AccountStatusId == (int) accounts_coding_test.Enums.AccountStatuses.Inactive))
+                    {
+                        <ul class="account-data-list">
+                            <li><label>@Html.DisplayNameFor(model => model.FirstName):</label> @Html.DisplayFor(modelItem => acct.LastName), @Html.DisplayFor(modelItem => acct.FirstName)</li>
+                            <li><label>@Html.DisplayNameFor(model => model.Email):</label> @Html.DisplayFor(modelItem => acct.Email)</li>
+                            <li><label>@Html.DisplayNameFor(model => model.PhoneNumber):</label> @Html.DisplayFor(modelItem => acct.PhoneNumber)</li>
+                            <li><label>@Html.DisplayNameFor(model => model.AmountDue):</label> @Html.DisplayFor(modelItem => acct.AmountDue)</li>
+                            <li><label>@Html.DisplayNameFor(model => model.PaymentDueDate):</label> @Html.DisplayFor(modelItem => acct.PaymentDueDate)</li>
+                        </ul>
+                    }
+                    </div>
+            </div>
+        </section>
+    </main>
+    <footer class="grid">
+        <p class="copy">
+            &copy;
+            <script>document.write(new Date().getFullYear())</script>
+        </p>
+    </footer>
+</section>
